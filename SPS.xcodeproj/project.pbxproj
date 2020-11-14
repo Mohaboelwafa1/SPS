@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,7 @@
 		4CC3C83D255FFB4100CF2A46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CC3C83B255FFB4100CF2A46 /* LaunchScreen.storyboard */; };
 		4CC3C848255FFB4100CF2A46 /* SPSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC3C847255FFB4100CF2A46 /* SPSTests.swift */; };
 		4CC3C853255FFB4100CF2A46 /* SPSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC3C852255FFB4100CF2A46 /* SPSUITests.swift */; };
+		4CC3C862255FFF8F00CF2A46 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC3C861255FFF8F00CF2A46 /* R.generated.swift */; };
 		EE91027A57DDFFA7CC1EB78B /* Pods_SPSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9970F12AE2E1CAA3F9531CC2 /* Pods_SPSTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		4CC3C84E255FFB4100CF2A46 /* SPSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SPSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CC3C852255FFB4100CF2A46 /* SPSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPSUITests.swift; sourceTree = "<group>"; };
 		4CC3C854255FFB4100CF2A46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CC3C861255FFF8F00CF2A46 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		571C4F084AC60256D347A5A9 /* Pods-SPS-SPSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPS-SPSUITests.release.xcconfig"; path = "Target Support Files/Pods-SPS-SPSUITests/Pods-SPS-SPSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		57E2209610319A03A81D32D4 /* Pods-SPS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPS.debug.xcconfig"; path = "Target Support Files/Pods-SPS/Pods-SPS.debug.xcconfig"; sourceTree = "<group>"; };
 		6539254B261E428A73AB2740 /* Pods-SPS-SPSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPS-SPSUITests.debug.xcconfig"; path = "Target Support Files/Pods-SPS-SPSUITests/Pods-SPS-SPSUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		4CC3C821255FFB3F00CF2A46 = {
 			isa = PBXGroup;
 			children = (
+				4CC3C861255FFF8F00CF2A46 /* R.generated.swift */,
 				4CC3C82C255FFB3F00CF2A46 /* SPS */,
 				4CC3C846255FFB4100CF2A46 /* SPSTests */,
 				4CC3C851255FFB4100CF2A46 /* SPSUITests */,
@@ -168,7 +171,6 @@
 				A770C8E5BED93E2CA44D205E /* Pods-SPSTests.debug.xcconfig */,
 				010D7783C72312B523518BB9 /* Pods-SPSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -180,6 +182,7 @@
 			buildConfigurationList = 4CC3C857255FFB4100CF2A46 /* Build configuration list for PBXNativeTarget "SPS" */;
 			buildPhases = (
 				60468715A689129736ABA1E0 /* [CP] Check Pods Manifest.lock */,
+				4CC3C860255FFDFE00CF2A46 /* ShellScript */,
 				4CC3C826255FFB3F00CF2A46 /* Sources */,
 				4CC3C827255FFB3F00CF2A46 /* Frameworks */,
 				4CC3C828255FFB3F00CF2A46 /* Resources */,
@@ -321,6 +324,25 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SPS-SPSUITests/Pods-SPS-SPSUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		4CC3C860255FFDFE00CF2A46 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 		60468715A689129736ABA1E0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -413,6 +435,7 @@
 			files = (
 				4CC3C832255FFB3F00CF2A46 /* ViewController.swift in Sources */,
 				4CC3C82E255FFB3F00CF2A46 /* AppDelegate.swift in Sources */,
+				4CC3C862255FFF8F00CF2A46 /* R.generated.swift in Sources */,
 				4CC3C838255FFB3F00CF2A46 /* SPS.xcdatamodeld in Sources */,
 				4CC3C830255FFB3F00CF2A46 /* SceneDelegate.swift in Sources */,
 			);
