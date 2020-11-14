@@ -114,6 +114,57 @@ struct R: Rswift.Validatable {
   }
   #endif
 
+  /// This `R.image` struct is generated, and contains static references to 5 images.
+  struct image {
+    /// Image `CloudIcon`.
+    static let cloudIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "CloudIcon")
+    /// Image `ConnectionError`.
+    static let connectionError = Rswift.ImageResource(bundle: R.hostingBundle, name: "ConnectionError")
+    /// Image `countryPlaceHolder`.
+    static let countryPlaceHolder = Rswift.ImageResource(bundle: R.hostingBundle, name: "countryPlaceHolder")
+    /// Image `noDataFound`.
+    static let noDataFound = Rswift.ImageResource(bundle: R.hostingBundle, name: "noDataFound")
+    /// Image `splashBG`.
+    static let splashBG = Rswift.ImageResource(bundle: R.hostingBundle, name: "splashBG")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "CloudIcon", bundle: ..., traitCollection: ...)`
+    static func cloudIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.cloudIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ConnectionError", bundle: ..., traitCollection: ...)`
+    static func connectionError(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.connectionError, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "countryPlaceHolder", bundle: ..., traitCollection: ...)`
+    static func countryPlaceHolder(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.countryPlaceHolder, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "noDataFound", bundle: ..., traitCollection: ...)`
+    static func noDataFound(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.noDataFound, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "splashBG", bundle: ..., traitCollection: ...)`
+    static func splashBG(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.splashBG, compatibleWith: traitCollection)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
   /// This `R.info` struct is generated, and contains static references to 1 properties.
   struct info {
     struct uiApplicationSceneManifest {
@@ -145,6 +196,135 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  struct nib {
+    /// Nib `CustomCountryCell`.
+    static let customCountryCell = _R.nib._CustomCountryCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CustomCountryCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.customCountryCell) instead")
+    static func customCountryCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.customCountryCell)
+    }
+    #endif
+
+    static func customCountryCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CustomCountryCell? {
+      return R.nib.customCountryCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CustomCountryCell
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  struct reuseIdentifier {
+    /// Reuse identifier `CustomCountryCell`.
+    static let customCountryCell: Rswift.ReuseIdentifier<CustomCountryCell> = Rswift.ReuseIdentifier(identifier: "CustomCountryCell")
+
+    fileprivate init() {}
+  }
+
+  /// This `R.string` struct is generated, and contains static references to 1 localization tables.
+  struct string {
+    /// This `R.string.localizable` struct is generated, and contains static references to 6 localization keys.
+    struct localizable {
+      /// Value: Connection error
+      static let connectionError = Rswift.StringResource(key: "connection error", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Loading ...
+      static let loading = Rswift.StringResource(key: "loading", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Make sure of connection
+      static let makeSureOfConnection = Rswift.StringResource(key: "make sure of connection", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Please make sure of connection. We are trying again
+      static let retryConnect = Rswift.StringResource(key: "retry connect", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Please wait ...
+      static let pleaseWait = Rswift.StringResource(key: "please wait", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Unkown
+      static let unkown = Rswift.StringResource(key: "unkown", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+
+      /// Value: Connection error
+      static func connectionError(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("connection error", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "connection error"
+        }
+
+        return NSLocalizedString("connection error", bundle: bundle, comment: "")
+      }
+
+      /// Value: Loading ...
+      static func loading(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("loading", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "loading"
+        }
+
+        return NSLocalizedString("loading", bundle: bundle, comment: "")
+      }
+
+      /// Value: Make sure of connection
+      static func makeSureOfConnection(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("make sure of connection", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "make sure of connection"
+        }
+
+        return NSLocalizedString("make sure of connection", bundle: bundle, comment: "")
+      }
+
+      /// Value: Please make sure of connection. We are trying again
+      static func retryConnect(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("retry connect", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "retry connect"
+        }
+
+        return NSLocalizedString("retry connect", bundle: bundle, comment: "")
+      }
+
+      /// Value: Please wait ...
+      static func pleaseWait(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("please wait", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "please wait"
+        }
+
+        return NSLocalizedString("please wait", bundle: bundle, comment: "")
+      }
+
+      /// Value: Unkown
+      static func unkown(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("unkown", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "unkown"
+        }
+
+        return NSLocalizedString("unkown", bundle: bundle, comment: "")
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
       try _R.validate()
@@ -161,9 +341,42 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
+    try nib.validate()
+    #endif
+    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
+
+  #if os(iOS) || os(tvOS)
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _CustomCountryCell.validate()
+    }
+
+    struct _CustomCountryCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = CustomCountryCell
+
+      let bundle = R.hostingBundle
+      let identifier = "CustomCountryCell"
+      let name = "CustomCountryCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CustomCountryCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CustomCountryCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "countryPlaceHolder", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'countryPlaceHolder' is used in nib 'CustomCountryCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
 
   #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {
@@ -184,6 +397,7 @@ struct _R: Rswift.Validatable {
       let name = "LaunchScreen"
 
       static func validate() throws {
+        if UIKit.UIImage(named: "splashBG", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'splashBG' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -194,14 +408,27 @@ struct _R: Rswift.Validatable {
 
     #if os(iOS) || os(tvOS)
     struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = ViewController
+      typealias InitialController = UIKit.UINavigationController
 
       let bundle = R.hostingBundle
+      let countriesListViewController = StoryboardViewControllerResource<CountriesListViewController>(identifier: "CountriesListViewController")
       let name = "Main"
+      let splashViewController = StoryboardViewControllerResource<SplashViewController>(identifier: "SplashViewController")
+
+      func countriesListViewController(_: Void = ()) -> CountriesListViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: countriesListViewController)
+      }
+
+      func splashViewController(_: Void = ()) -> SplashViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: splashViewController)
+      }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "splashBG", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'splashBG' is used in storyboard 'Main', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+        if _R.storyboard.main().countriesListViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'countriesListViewController' could not be loaded from storyboard 'Main' as 'CountriesListViewController'.") }
+        if _R.storyboard.main().splashViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'splashViewController' could not be loaded from storyboard 'Main' as 'SplashViewController'.") }
       }
 
       fileprivate init() {}
